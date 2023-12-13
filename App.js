@@ -1,9 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View,ImageBackground, ScrollView, Pressable } from 'react-native';
+import { Image, Text, View, ImageBackground, ScrollView, Pressable, Linking } from 'react-native';
 import profilePic from './assets/ashik-profile.jpg'
 import bgImg from "./assets/bg-img.jpg";
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faMugSaucer } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesome } from "@expo/vector-icons";
+
 
 
 export default function App() {
@@ -110,9 +109,22 @@ export default function App() {
             reality, Muhammed Ashik is the name to remember.
           </Text>
         </Text>
-        <View>
-          <Pressable>
-            <FontAwesomeIcon icon={faMugSaucer} />
+        <View style={{ flexDirection: "row", gap: 30 }}>
+          <Pressable
+            onPress={() => {
+              const url = "https://www.instagram.com/ashikswanderlens/";
+              Linking.openURL(url);
+            }}
+          >
+            <FontAwesome name="instagram" size={30} color="white" />
+          </Pressable>
+          <Pressable
+            onPress={() => {
+              const url = "https://www.linkedin.com/in/ashikpnc/";
+              Linking.openURL(url);
+            }}
+          >
+            <FontAwesome name="linkedin" size={30} color="white" />
           </Pressable>
         </View>
       </ImageBackground>
